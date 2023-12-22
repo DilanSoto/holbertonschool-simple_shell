@@ -11,6 +11,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 {
     char *line = NULL, **tokens = NULL;
     size_t n = 0;
+    int i;
 
     while (1)
     {
@@ -27,7 +28,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
         {
             if (_strcmp(tokens[0], "env") == 0)
             {
-                for (int i = 0; env[i]; i++)
+                for (i = 0; env[i]; i++)
                 {
                     write(STDOUT_FILENO, env[i], _strlen(env[i]));
                     write(STDOUT_FILENO, "\n", 1);
